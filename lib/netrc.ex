@@ -1,0 +1,2 @@
+defmodule Netrc do
+end
