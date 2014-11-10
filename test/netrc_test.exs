@@ -1,7 +1,9 @@
 defmodule NetrcTest do
   use ExUnit.Case
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  test "read sample netrc" do
+    netrc = Netrc.read("test/data/sample.netrc")
+    assert is_map(netrc)
+    assert Map.get(netrc, "m") == %{ "login" => "l", "password" => "p" }
   end
 end
