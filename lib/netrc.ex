@@ -26,6 +26,10 @@ defmodule Netrc do
     map = Map.put(map, name, %{})
     parse(tail, map, name)
   end
+  defp parse([ "default" | tokens], map) do
+    map = Map.put(map, "default", %{})
+    parse(tokens, map, "default")
+  end
   defp parse([_ | tokens], map) do
     parse(tokens, map)
   end
@@ -46,6 +50,9 @@ defmodule Netrc do
   end
   defp parse([ "machine" | tokens ], map, _machine) do
     parse([ "machine" | tokens ], map)
+  end
+  defp parse([ "default" | tokens ], map, _machine) do
+    parse([ "default" | tokens ], map)
   end
   defp parse([], map, _machine) do
     map
