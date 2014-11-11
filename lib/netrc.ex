@@ -1,6 +1,9 @@
 defmodule Netrc do
   @doc """
   # read a `.netrc` file and return dict
+
+  iex> Netrc.read("test/data/sample.netrc")
+  %{"m" => %{"login" => "l", "password" => "p"}}
   """
   def read(path \\ default_path) do
     File.read!(path)
