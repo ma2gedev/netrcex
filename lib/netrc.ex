@@ -9,7 +9,7 @@ defmodule Netrc do
   end
 
   defp default_path do
-    System.get_env("HOME") |> Path.join(".netrc")
+    System.user_home |> Path.join(".netrc")
   end
 
   defp lex(data) do
