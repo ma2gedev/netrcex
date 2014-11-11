@@ -13,7 +13,12 @@ defmodule Netrc do
   end
 
   defp lex(data) do
-    String.split(data, ~r{\s|\t|\n|\r}, trim: true)
+    String.split(data, ~r{\r?\n})
+    |> Enum.map(fn(line) ->
+      String.split(line, "#") |> Enum.at(0)
+    end)
+    |> Enum.join(" ")
+    |> String.split(~r{\s|\t|\n|\r}, trim: true)
   end
 
   defp parse([ "machine" | tokens], map) do
