@@ -3,8 +3,15 @@ defmodule Netrc.Mixfile do
 
   def project do
     [app: :netrc,
+     name: "netrcex",
      version: "0.0.1",
      elixir: "~> 1.0",
+     package: [
+       contributors: ["Takayuki Matsubara"],
+       licenses: ["MIT"],
+       links: %{"GitHub" => "https://github.com/ma2gedev/netrcex"}
+      ],
+     description: "Read netrc files",
      deps: deps]
   end
 
