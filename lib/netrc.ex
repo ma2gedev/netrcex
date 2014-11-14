@@ -12,7 +12,11 @@ defmodule Netrc do
   end
 
   defp default_path do
-    System.user_home |> Path.join(".netrc")
+    filename = case :os.type() do
+      {:win32, _} -> "_netrc"
+      _             -> ".netrc"
+    end
+    System.user_home |> Path.join(filename)
   end
 
   defp lex(data) do
