@@ -1,4 +1,6 @@
 defmodule Netrc do
+  import Bitwise
+
   @doc """
   # read a `.netrc` file and return dict
 
@@ -6,6 +8,10 @@ defmodule Netrc do
   %{"m" => %{"login" => "l", "password" => "p"}}
   """
   def read(path \\ default_path) do
+    {:ok, file_stat} = File.stat(path)
+    unless (file_stat.mode &&& 0o777) == 0o600 do
+      raise Netrc.Error, message: "'#{path}' permission should be 0600"
+    end
     File.read!(path)
     |> lex
     |> parse(%{})
@@ -64,4 +70,9 @@ defmodule Netrc do
   defp parse([], map, _machine) do
     map
   end
+
+  defmodule Error do
+    defexception message: "error"
+  end
 end
+

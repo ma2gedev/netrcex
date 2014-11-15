@@ -28,4 +28,10 @@ defmodule NetrcTest do
     assert Map.get(netrc, "m2") == %{ "login" => "l2", "password" => "p2" }
     assert Map.get(netrc, "default") == %{ "login" => "dl", "password" => "dp" }
   end
+
+  test "raise exception when read a permissive file" do
+    assert_raise Netrc.Error, fn ->
+      Netrc.read("test/data/permissive.netrc")
+    end
+  end
 end
