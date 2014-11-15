@@ -1,6 +1,13 @@
 defmodule NetrcTest do
   use ExUnit.Case
 
+  setup do
+    Path.wildcard("test/data/*.netrc")
+    |> Enum.each(&File.chmod(&1, 0o100600))
+    File.chmod("test/data/permissive.netrc", 0o100644)
+    :ok
+  end
+
   test "read sample netrc" do
     netrc = Netrc.read("test/data/sample.netrc")
     assert Map.get(netrc, "m") == %{ "login" => "l", "password" => "p" }
