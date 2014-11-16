@@ -4,7 +4,7 @@ defmodule Netrc.Mixfile do
   def project do
     [app: :netrc,
      name: "netrcex",
-     version: "0.0.1",
+     version: "0.0.2",
      elixir: "~> 1.0",
      package: [
        contributors: ["Takayuki Matsubara"],
