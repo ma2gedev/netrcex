@@ -1,7 +1,7 @@
 defmodule NetrcTest do
   use ExUnit.Case
 
-  setup do
+  setup_all do
     Path.wildcard("test/data/*.netrc")
     |> Enum.each(&File.chmod(&1, 0o100600))
     File.chmod("test/data/permissive.netrc", 0o100644)
