@@ -1,6 +1,6 @@
 # Netrc - Reads netrc files implemented in Elixir
 
-[![hex.pm version](https://img.shields.io/hexpm/v/netrc.svg)](https://hex.pm/packages/netrc) [![hex.pm downloads](https://img.shields.io/hexpm/dt/netrc.svg)](https://hex.pm/packages/netrc) [![Build Status](https://travis-ci.org/ma2gedev/netrcex.svg?branch=master)](https://travis-ci.org/ma2gedev/netrcex)
+[![hex.pm version](https://img.shields.io/hexpm/v/netrc.svg)](https://hex.pm/packages/netrc) [![hex.pm downloads](https://img.shields.io/hexpm/dt/netrc.svg)](https://hex.pm/packages/netrc) [![Build Status](https://travis-ci.org/ma2gedev/netrcex.svg?branch=master)](https://travis-ci.org/ma2gedev/netrcex) [![Coverage Status](https://img.shields.io/coveralls/ma2gedev/netrcex.svg)](https://coveralls.io/r/ma2gedev/netrcex)
 
 ## Installation
 
