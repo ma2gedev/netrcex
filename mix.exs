@@ -12,6 +12,7 @@ defmodule Netrc.Mixfile do
        links: %{"GitHub" => "https://github.com/ma2gedev/netrcex"}
       ],
      description: "Read netrc files",
+     test_coverage: [tool: ExCoveralls],
      deps: deps]
   end
 
@@ -32,6 +33,7 @@ defmodule Netrc.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:ex_doc, "~> 0.6", only: :dev}]
+    [{:ex_doc, "~> 0.6", only: :dev},
+     {:excoveralls, "~> 0.3", only: :dev},]
   end
 end
