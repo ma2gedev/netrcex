@@ -2,7 +2,9 @@ defmodule Netrc do
   import Bitwise
 
   @doc """
-  # read a `.netrc` file and return dict
+  read a `.netrc` file and return dict
+
+  ### Examples
 
   iex> Netrc.read("test/data/sample.netrc")
   %{"m" => %{"login" => "l", "password" => "p"}}
