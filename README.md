@@ -40,5 +40,5 @@ iex> Netrc.read("test/data/sample.netrc")
 
 ## License
 
-Copyright © 2014 Takayuki Matsubara, released under the MIT license.
+Copyright © 2014-2015 Takayuki Matsubara, released under the MIT license.
 
