@@ -34,6 +34,7 @@ defmodule Netrc.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [{:ex_doc, "~> 0.6", only: :dev},
-     {:excoveralls, "~> 0.3", only: :dev},]
+     {:excoveralls, "~> 0.3", only: :dev},
+     {:power_assert, "~> 0.0", only: :test}]
   end
 end

@@ -1,5 +1,5 @@
 defmodule NetrcTest do
-  use ExUnit.Case
+  use PowerAssert
 
   setup_all do
     Path.wildcard("test/data/*.netrc")
